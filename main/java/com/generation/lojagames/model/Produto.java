@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @Entity
 @Table(name = "tb_produtos")
 public class Produto {
@@ -26,6 +27,10 @@ public class Produto {
 	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	public Categoria categoria;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
